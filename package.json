@@ -1,0 +1,20 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "Blog site for publishing articles, blog posts, thoughts and opinions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkbaffour777/tech-blog.git"
+  },
+  "author": "Daniel Baffour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkbaffour777/tech-blog/issues"
+  },
+  "homepage": "https://github.com/dkbaffour777/tech-blog#readme"
+}
