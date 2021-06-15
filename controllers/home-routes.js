@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
 
       res.render('homepage', {
         posts,
+        username: req.session.username,
         loggedIn: req.session.loggedIn
       });
     })
@@ -64,7 +65,7 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['id', 'username']
       }
     ]
   })
@@ -75,9 +76,11 @@ router.get('/post/:id', (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
-
+      const isEdit = post.user.id === req.session.user_id ? true : false;
+      
       res.render('single-post', {
         post,
+        isEdit,
         loggedIn: req.session.loggedIn
       });
     })
@@ -89,6 +92,7 @@ router.get('/post/:id', (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
+      console.log("you are now logged in")
     res.redirect('/');
     return;
   }
