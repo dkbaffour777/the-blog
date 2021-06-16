@@ -121,6 +121,11 @@
   .delete-post-btn:hover {
     background-color: #ff643d;
   }
+
+  #new-post-form {
+    margin-top: 10px;
+    display: none;
+  }
   
   .post {
     margin-bottom: 2%;

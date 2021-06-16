@@ -1,8 +1,12 @@
+document.querySelector('#new-post-btn').addEventListener('click', () => {
+  document.querySelector('#new-post-form').style.display = "block";
+});
+
 async function newFormHandler(event) {
   event.preventDefault();
 
   const title = document.querySelector('input[name="post-title"]').value;
-  const content = document.querySelector('input[name="post-content"]').value;
+  const content = document.querySelector('textarea[name="post-content"]').value;
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',
