@@ -5,6 +5,8 @@
 
   Blog site for publishing articles, blog posts, thoughts and opinions. Some of the main tools/packages utilized in this project are Node.js, express, sequelize, mysql2 and express-handlebars.
 
+  Deployed link - https://dkbaffour-tech-blog.herokuapp.com/
+
 !['app'](assets/images/app.PNG)
   
 
