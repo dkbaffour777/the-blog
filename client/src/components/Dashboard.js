@@ -3,8 +3,8 @@ import React, { useReducer, useState } from "react";
 
 const Dashboard = () => {
     const [displayNPForm, setdisplayNPForm] = useReducer(isDisplay => !isDisplay, false);
-    const [title, handleTitle] = useState("");
-    const [content, handleContent] = useState("");
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
 
     async function newFormHandler(event) {
         event.preventDefault();
@@ -50,7 +50,7 @@ const Dashboard = () => {
                             id="post-title"
                             name="post-title"
                             value={title}
-                            onChange={(e) => handleTitle(e.target.value)}
+                            onChange={(e) => setTitle(e.target.value)}
                         />
                     </div>
                     <div>
@@ -59,8 +59,9 @@ const Dashboard = () => {
                             id="post-content"
                             name="post-content"
                             value={content}
-                            onChange={(e) => handleContent(e.target.value)}
-                        > </textarea>
+                            onChange={(e) => setContent(e.target.value)}
+                        >
+                        </textarea>
                     </div>
                     <button type="submit" className="btn">Create</button>
                 </form>

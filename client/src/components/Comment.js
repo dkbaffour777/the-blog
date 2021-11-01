@@ -1,5 +1,5 @@
 import React from "react";
-import { format_date } from "../../../server/utils/helpers";
+import { format_date } from "../utils/helpers";
 
 const Comment = (user, comment_text) => {
     return (
