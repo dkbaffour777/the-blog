@@ -1,14 +1,11 @@
-export const allPosts =()=> {
+export const allPosts = async () => {
     const response = await fetch(`/api/posts`, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         }
-      });
-    
-      if (response.ok) {
-        return response.json();
-      } else {
-        alert(response.statusText);
-      }
+    });
+
+    const results = response.json();
+    return results;
 }
