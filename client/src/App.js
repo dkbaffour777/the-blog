@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from './components/Dashboard';
+import EditPost from './components/EditPost';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
@@ -32,6 +33,11 @@ const App =()=> {
               exact
               path="/single-post/:id"
               component={SinglePost}
+            />
+            <Route
+              exact
+              path="/single-post/:id/edit"
+              component={EditPost}
             />
             <Route render={() => <h1>Unknown page!</h1>} />
           </Switch>

@@ -4,21 +4,20 @@ import { singlePost } from "../Data/FetchData";
 import PostInfo from "./PostInfo";
 
 const SinglePost =()=> {
-    const location = useLocation();
     const [post, setPost] = useState({});
+    const location = useLocation();
+    const location_id = location.pathname.slice(13);
     useEffect(()=> {
         (async ()=>{
             try {
-                const location_id = location.pathname.slice(13);
                 //id, title, content, comments, user, created_at
-                const {id, title, content, comments, user, created_at} 
-                    = await singlePost(location_id);
-                setPost({id, title, content, comments, user, created_at})
+                const _post = await singlePost(location_id);
+                setPost(_post)
             } catch (error) {
                 console.error(error)
             }
         })()
-    }, [location])
+    }, [location_id])
     return (
         <>
             {/* PostInfo */}
@@ -36,7 +35,7 @@ const SinglePost =()=> {
                         <button type="submit">add comment</button>
                         {
                             true && //isEdit
-                                <Link to={`/dashboard/edit/${post?.id}`}>edit post</Link>
+                                <Link to={`/single-post/${post?.id}/edit`}>edit post</Link>
                         }
                     </div>
                 </form>

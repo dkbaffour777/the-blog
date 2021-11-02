@@ -1,18 +1,15 @@
 import React from "react";
-import { format_date } from "../utils/helpers";
 
-const Comment = (user, comment_text) => {
+const Comment = ({username, comment_text, created_at}) => {
     return (
-        <div className="comments">
-            <section className="comment">
-                <div className="meta">
-                    { user.username } on { format_date(created_at) }
-                </div>
-                <div className="text">
-                    {{ comment_text }}
-                </div>
-            </section>
-        </div>
+        <section className="comment">
+            <div className="meta">
+                {username} on {created_at}
+            </div>
+            <div className="text">
+                <p> {comment_text} </p>
+            </div>
+        </section>
     );
 }
 
